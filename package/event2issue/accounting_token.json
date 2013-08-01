@@ -1,0 +1,9 @@
+{
+    "customer": "admin",
+    "offering": {
+        "name": "SmartCityLights",
+        "organization": "MyOrg",
+        "version": "1.0"
+    },
+    "reference": "51c86e175d9af944d0d1cfe5"
+}

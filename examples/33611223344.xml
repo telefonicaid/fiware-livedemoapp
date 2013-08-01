@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulationFragment>
+  <name>My Route</name>
+  <pathRoutes>
+     <pathRoute>
+      <context>
+          <msisdn>33611223344</msisdn>
+          <velocity>1.0</velocity>
+          <autoMove>true</autoMove>
+          <autoLoop>true</autoLoop>
+          <logPath>false</logPath>
+      </context>
+      <positions>
+          <position>
+            <name>Position 0</name>
+            <latitude>43.545571</latitude>
+            <longitude>1.387802</longitude>
+            <altitude>31.0</altitude>
+          </position>
+          <position>
+            <name>Position 1</name>
+            <latitude>43.5453</latitude>
+            <longitude>1.3883</longitude>
+            <altitude>31.0</altitude>
+          </position>
+          <position>
+            <name>Position 2</name>
+            <latitude>43.545107</latitude>
+            <longitude>1.388511</longitude>
+            <altitude>31.0</altitude>
+          </position>
+          <position>
+            <name>Position 3</name>
+            <latitude>43.544992</latitude>
+            <longitude>1.388417</longitude>
+            <altitude>31.0</altitude>
+          </position>
+          <position>
+            <name>Position 4</name>
+            <latitude>43.545083</latitude>
+            <longitude>1.387808</longitude>
+            <altitude>31.0</altitude>
+          </position>
+          <position>
+            <name>Position 5</name>
+            <latitude>43.545240</latitude>
+            <longitude>1.387856</longitude>
+            <altitude>31.0</altitude>
+          </position>
+      </positions>
+     </pathRoute>
+  </pathRoutes>
+</simulationFragment>

@@ -1,0 +1,100 @@
+<registerContextRequest>
+<contextRegistrationList>
+  <contextRegistration>
+    <entityIdList>
+      <entityId type="Regulator" isPattern="">
+        <id>OUTSMART.RG_LAS_LLAMAS_01</id>
+      </entityId>
+    </entityIdList>
+    <contextRegistrationAttributeList>
+      <contextRegistrationAttribute>
+        <name>TimeInstant</name>
+        <type>urn:x-ogc:def:trs:IDAS:1.0:ISO8601</type>
+        <isDomain>false</isDomain>
+      </contextRegistrationAttribute>
+      <contextRegistrationAttribute>
+        <name>ActivePower</name>
+        <type>urn:x-ogc:def:phenomenon:Outsmart:1.0:ActivePower</type>
+        <isDomain>false</isDomain>
+      </contextRegistrationAttribute>
+      <contextRegistrationAttribute>
+        <name>ReactivePower</name>
+        <type>urn:x-ogc:def:phenomenon:Outsmart:1.0:ReactivePower</type>
+        <isDomain>false</isDomain>
+      </contextRegistrationAttribute>
+      <contextRegistrationAttribute>
+        <name>electricPotential</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:electricPotential</type>
+        <isDomain>false</isDomain>
+      </contextRegistrationAttribute>
+      <contextRegistrationAttribute>
+        <name>electricCurrent</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:electricCurrent</type>
+        <isDomain>false</isDomain>
+      </contextRegistrationAttribute>
+      <contextRegistrationAttribute>
+        <name>Latitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:latitude</type>
+        <isDomain>false</isDomain>
+        <registrationMetadata>
+          <contextMetadata>
+          <name>code</name>
+          <type></type>
+          <value>deg</value>
+          </contextMetadata>
+          <contextMetadata>
+          <name>value</name>
+          <type></type>
+          <value>43.4717</value>
+          </contextMetadata>
+        </registrationMetadata>
+      </contextRegistrationAttribute>
+      <contextRegistrationAttribute>
+        <name>Longitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:longitude</type>
+        <isDomain>false</isDomain>
+        <registrationMetadata>
+          <contextMetadata>
+          <name>code</name>
+          <type></type>
+          <value>deg</value>
+          </contextMetadata>
+          <contextMetadata>
+          <name>value</name>
+          <type></type>
+          <value>-3.80692</value>
+          </contextMetadata>
+        </registrationMetadata>
+      </contextRegistrationAttribute>
+    </contextRegistrationAttributeList>
+    <registrationMetadata>
+      <contextMetadata>
+      <name>Local Identifier</name>
+      <type></type>
+      <value>RG_LAS_LLAMAS_01</value>
+      </contextMetadata>
+      <contextMetadata>
+      <name>Serial Number</name>
+      <type></type>
+      <value>628339895</value>
+      </contextMetadata>
+      <contextMetadata>
+      <name>Local Name</name>
+      <type></type>
+      <value>Reg_Las Llamas_01</value>
+      </contextMetadata>
+      <contextMetadata>
+      <name>Manufacturer</name>
+      <type></type>
+      <value>ARELSA</value>
+      </contextMetadata>
+      <contextMetadata>
+      <name>UniversalIdentifierOfLogicalHub</name>
+      <type></type>
+      <value>OUTSMART</value>
+      </contextMetadata>
+    </registrationMetadata>
+    <providingApplication>iotAgent</providingApplication>
+  </contextRegistration>
+</contextRegistrationList>
+</registerContextRequest>

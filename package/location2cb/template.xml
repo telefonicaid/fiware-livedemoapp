@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulationFragment>
+  <name></name>
+  <pathRoutes>
+     <pathRoute>
+      <context>
+          <msisdn></msisdn>
+          <velocity>20.0</velocity>
+          <autoMove></autoMove>
+          <autoLoop></autoLoop>
+          <logPath>false</logPath>
+      </context>
+      <positions>
+
+      </positions>
+     </pathRoute>
+  </pathRoutes>
+</simulationFragment>

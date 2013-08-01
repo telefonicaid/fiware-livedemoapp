@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulationFragment>
+  <name>Test Route</name>
+  <pathRoutes>
+     <pathRoute>
+      <context>
+          <msisdn>34604872235</msisdn>
+          <velocity>20.0</velocity>
+          <autoMove>true</autoMove>
+          <autoLoop>true</autoLoop>
+          <logPath>false</logPath>
+      </context>
+      <positions>
+      <position>
+            <name>Position 0</name>
+            <latitude>43.47382</latitude>
+            <longitude>-3.784922</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 1</name>
+            <latitude>43.473539</latitude>
+            <longitude>-3.786703</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 2</name>
+            <latitude>43.47315</latitude>
+            <longitude>-3.789021</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 3</name>
+            <latitude>43.472839</latitude>
+            <longitude>-3.790973</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 4</name>
+            <latitude>43.472543</latitude>
+            <longitude>-3.793055</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 5</name>
+            <latitude>43.473477</latitude>
+            <longitude>-3.793548</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 6</name>
+            <latitude>43.474505</latitude>
+            <longitude>-3.794128</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 7</name>
+            <latitude>43.475673</latitude>
+            <longitude>-3.794836</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 8</name>
+            <latitude>43.476436</latitude>
+            <longitude>-3.795179</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 9</name>
+            <latitude>43.476887</latitude>
+            <longitude>-3.7949</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 10</name>
+            <latitude>43.47723</latitude>
+            <longitude>-3.79548</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 11</name>
+            <latitude>43.477136</latitude>
+            <longitude>-3.795866</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 12</name>
+            <latitude>43.476622</latitude>
+            <longitude>-3.796231</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 13</name>
+            <latitude>43.476264</latitude>
+            <longitude>-3.797904</longitude>
+            <altitude>12.0</altitude>
+          </position>
+          <position>
+            <name>Position 14</name>
+            <latitude>43.475891</latitude>
+            <longitude>-3.799342</longitude>
+            <altitude>12.0</altitude>
+          </position>
+      </positions>
+     </pathRoute>
+  </pathRoutes>
+</simulationFragment>
