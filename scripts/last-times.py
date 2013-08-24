@@ -26,12 +26,23 @@ output = p.stdout.read()
 
 doc = etree.fromstring(output)
 
+records = {}
+no_time = []
 for ce in doc.findall('.//contextElement'):
     id = ce.find('.//id').text
-    time_instant = None
     for ca in ce.findall('.//contextAttribute'):
         if (ca.find('name').text == 'TimeInstant'):
-            time_instant = ca.find('contextValue').text
+            t = ca.find('contextValue').text
+            # Sometimes is an actual None, sometimes is the "None" string
+            if t == 'None' or t == None:
+                no_time.append(id)
+            else:
+                records[t] = id
 
-    print repr(id).ljust(35), ": ", str(time_instant)
-
+times = records.keys()
+times.sort()
+times.reverse()
+for t in times:
+    print repr(records[t]).ljust(35), ': ', str(t)
+for i in no_time:
+    print repr(i).ljust(35), ': ', "None"
