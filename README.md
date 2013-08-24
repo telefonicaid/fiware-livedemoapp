@@ -189,6 +189,11 @@ encapsulates the actual NGSI request issued to Orion Context Broker.
 ./set-node.sh 3501 batteryCharge
 ```
 
+* erase-node-date.sh: erases the TimeInstant of a given Node, setting it to "None"
+```
+./erase-node-date.sh 3512
+```
+
 * set-regulator.sh: set a given attribute of the Regulator with a given value, passed as argument.
 ```
 ./set-regulator.sh electricalPotential -7
