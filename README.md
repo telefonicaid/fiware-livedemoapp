@@ -5,8 +5,8 @@ worldwide under AGPL license so they can have a look on how applications are bui
 In particular, this repository contains the pieces of code developed by Telefónica I+D, other pieces (developed by
 other partners in the project) are available in the following locations:
 
-* historymod module. Developed by Universidad Politécnica de Madrid (UPM). (URL to be provided)
-* Wirecloud mashup. Developed by Universidad Politécnica de Madrid (UPM). (URL to be provided)
+* historymod module. Developed by Universidad Politécnica de Madrid (UPM). https://github.com/wirecloud-fiware/historymod
+* Wirecloud mashup. Developed by Universidad Politécnica de Madrid (UPM). https://github.com/wirecloud-fiware/live-demo-macs
 * Complex Event Processing (CEP) Rules (developed by IBM): https://forge.fi-ware.eu/scmrepos/svn/fiware/trunk/FI-WARE/Data/CEP/rule-examples/
 
 Familiarity with LiveDemo architecture in general is required in order to fully understand this
