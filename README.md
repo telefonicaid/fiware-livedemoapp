@@ -150,7 +150,10 @@ In particular:
     * 03_subscribeCep.sh, subscribes CEP to changes in Nodes, AMMS and Regulator, so CEP is notified each time a
       change occurs in these entities (these changes in sequence can trigger rules which result are events published
       in the CEP singleton entity)
+    * 05_vans_init.sh, register the four van entities
     * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
+    * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications
+    * 08_subscribeFederatedCB-vans.sh, subscribe a federated CB (orion2 in the file) to van notifications
 
 * get-from-amms.py: pretty-prints a given attribute for all AMMS (attribute name passed as argument). It
 relies on query-amms.sh script, which encapsulates the actual NGSI request issued to Orion Context Broker.
