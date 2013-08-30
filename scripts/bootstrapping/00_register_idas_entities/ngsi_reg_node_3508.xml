@@ -92,4 +92,5 @@
     <providingApplication>iotAgent</providingApplication>
   </contextRegistration>
 </contextRegistrationList>
+<duration>P1Y</duration>
 </registerContextRequest>
