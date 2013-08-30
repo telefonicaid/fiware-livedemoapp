@@ -1,5 +1,6 @@
+# -*- coding: latin-1 -*-
 #!/usr/bin/python
-# Copyright 2013 Telefonica InvestigaciÃ³n y Desarrollo, S.A.U
+# Copyright 2013 Telefonica Investigación y Desarrollo, S.A.U
 #
 # This file is part of FI-WARE LiveDemo App
 #
