@@ -17,47 +17,47 @@
 
 PORT=1026
 
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3500.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3500.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3501.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3501.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3502.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3502.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3503.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3503.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3504.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3504.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3505.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3505.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3506.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3506.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3507.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3507.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3508.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3508.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3509.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3509.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3510.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3510.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3511.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3511.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3512.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3512.xml
 
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3513.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3513.xml
 
 sleep 1
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/x-www-form-urlencoded' $CURL_VERBOSE --data-binary @ngsi_reg_node_3514.xml
+curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_node_3514.xml
