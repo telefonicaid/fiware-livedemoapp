@@ -16,4 +16,4 @@
 #
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
-iptables -A INPUT -p tcp -s A.B.C.D --dport 1026:1026 -j DROP
+iptables -A INPUT -p tcp -s ${IDAS_IP} --dport 1026:1026 -j DROP
