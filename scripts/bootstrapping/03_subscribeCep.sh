@@ -16,7 +16,7 @@
 #
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
-(curl localhost:1026/NGSI10/subscribeContext -s -S --header 'Content-Type: application/xml' -d @- | xmllint --format - ) <<EOF
+(curl ${CB_HOST}:${CB_PORT}/NGSI10/subscribeContext -s -S --header 'Content-Type: application/xml' -d @- | xmllint --format - ) <<EOF
 <?xml version="1.0"?>
 <subscribeContextRequest>
   <entityIdList>
@@ -32,7 +32,7 @@
   </entityIdList>
   <attributeList>
  </attributeList>
-  <reference>http://localhost:8089/ProtonOnWebServer/rest/events</reference>
+  <reference>http://${CEP_HOST}:${CEP_PORT}/ProtonOnWebServer/rest/events</reference>
   <duration>P1Y</duration>
   <notifyConditions>
         <notifyCondition>

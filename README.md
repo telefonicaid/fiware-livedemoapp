@@ -321,6 +321,30 @@ Due to security reasons, all the URLs in code, configuration and this documentat
 or DNS names. All are set to localhost. Of course, replace it with the right ones (in the FI-WARE GEi global or
 dedicated instances you were using) before running the software.
 
+To ease the task, all the parameters you need to configure for shell scripts (.sh files) are in the scripts/ENV.sh 
+file. Just edit that file and load it in your environment using:
+
+```
+. ENV.sh
+```
+
+Parameters:
+
+* CEP_HOST and CEP_PORT where the CEP runs
+* CB_HOST and CB_PORT where the Orion Context Broker runs
+* FED_CB_HOST and FED_CB_PORT where the federated Orion Context Broker runs
+* E2I_HOST and E2I_PORT where the event2issue runs
+* NGSI2COSMOS_HOST and NGSI2COSMOS_PORT where ngsi2cosmos runs
+* IDAS_HOST where IDAS runs
+
+However, the ENV.sh file only covers shell scripts (.sh files). For Python code, you need to look to the code and replace in
+the proper places:
+
+* In packages/event2issue/event2issue.py, set cb_url and store_url to the actual URLs
+* In packages/location2cb/locs_sim.py, set the URLs at the beginning to the LOCS actual URL
+* In packages/ngsi2cosmos/ngsi2cosmos.py, set cosmos_url properly to the URL where COSMOS Https is listening
+
+
 ## Contact
 
 For any question, bug report, suggestion or feedback in general, please contact with Fermín Galán (fermin at tid dot es).

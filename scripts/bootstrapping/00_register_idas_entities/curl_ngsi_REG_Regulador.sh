@@ -15,8 +15,6 @@
 #
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
-PORT=1026
-
-curl --request POST  http://0.0.0.0:$PORT/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_regulador_1.xml
+curl --request POST ${CB_HOST}:${CB_PORT}/ngsi9/registerContext  --header 'Content-Type: application/xml' $CURL_VERBOSE --data-binary @ngsi_reg_regulador_1.xml
 
 

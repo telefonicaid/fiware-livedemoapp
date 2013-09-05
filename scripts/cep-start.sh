@@ -16,6 +16,6 @@
 #
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
-curl localhost:8089/ProtonOnWebServerAdmin/resources/instances/ProtonOnWebServer -X PUT -s -S --header 'Content-Type: application/json' -d @-  <<EOF
+curl ${CEP_HOST}:${CEP_PORT}/ProtonOnWebServerAdmin/resources/instances/ProtonOnWebServer -X PUT -s -S --header 'Content-Type: application/json' -d @-  <<EOF
 {"action":"ChangeState","state":"start"} 
 EOF

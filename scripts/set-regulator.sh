@@ -19,7 +19,7 @@
 ATTR=$1
 VALUE=$2
 DATE=$(date --iso-8601=seconds)
-(curl localhost:1026/NGSI10/updateContext -s -S --header 'Content-Type: application/xml' -d @- | xmllint --format - ) <<EOF
+(curl ${CB_HOST}:${CB_PORT}/NGSI10/updateContext -s -S --header 'Content-Type: application/xml' -d @- | xmllint --format - ) <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <updateContextRequest>
   <contextElementList>

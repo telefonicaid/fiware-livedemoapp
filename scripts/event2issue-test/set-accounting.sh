@@ -16,7 +16,7 @@
 #
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
-curl localhost:5000/set_accounting -s -S --header 'Content-Type: application/json' -d @- <<EOF
+curl ${E2I_HOST}:${E2I_PORT}/set_accounting -s -S --header 'Content-Type: application/json' -d @- <<EOF
 {
     "offering": {
         "organization": "test_organization",
