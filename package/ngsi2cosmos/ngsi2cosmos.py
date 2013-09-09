@@ -188,4 +188,4 @@ if __name__ == '__main__':
         app.config['HDFS_BACKEND'] = WebHdfsBackend(app.logger, cosmos_url, base_dir, cosmos_user, dn_map)
 
     # Run the server
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
