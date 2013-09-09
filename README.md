@@ -76,25 +76,27 @@ simulation.
 
 * init_van.py, to init vans simulation in LOCS GEi
 ```
-python init_vans.py
+./init_vans.py
 ```
 
 * get_vans.py, to print van locations
 ```
-python get_vans.py [period (default = 5 seconds)] [times (default once) (0 = forever)]
+./get_vans.py [period (default = 5 seconds)] [times (default once) (0 = forever)]
+#e.g.: ./get_vans.py 10 0
 ```
 
 * stop_vans.py, to stop van simulation in LOCS GEi
 ```
-python stop_vans.py
+./stop_vans.py
 ```
 
 * move_van.py, to program LOCS with van movement from one point to another. Only van A and B are allowed to move this
-way, from Ax to Ex (and back) for van A and from Bx to Ex (and back). Look to the points.csv file for the coordinates
-associated to each point (they are in Santander city, but you could adapt this file to use yours).
+way, from A1 to Ex (and back) for van A and from B1 to Ex (and back). Look to the points.csv file for the coordinates
+associated to each point (they are in Santander city, but you could adapt this file to use yours). The default velocity
+is 20 km/h (to change it you need to edit template.xml).
 ```
-python move_van.py [van_msisdn] [from] [to]"
-#ej: python move_van.py 34621898316 A1 E7"
+./move_van.py [van_msisdn] [from] [to]"
+#e.g.: ./move_van.py 34621898316 A1 E7"
 ```
 
 * location2cb.py, deals with Orion Context Broker interactions. This tool can be used in two ways. If arguments are
@@ -103,9 +105,9 @@ moving a van from one point to another (pretty much the same than move_van.py de
 provided, then it just queries vans location from LOCS and updates the corresponding entities in Orion Context Broker.
 ```
 # autonomous mode
-python location2cb.py 34621898316 A1 E7"
+./location2cb.py 34621898316 A1 E7"
 # not autonomous mode
-python location2cb.py
+./location2cb.py
 ```
 
 ### ngsi2cosmos
