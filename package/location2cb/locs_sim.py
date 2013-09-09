@@ -21,13 +21,14 @@ __author__ = 'sergg'
 import requests
 import time
 from xml.dom.minidom import parse, parseString
+from env import locs_host
 
-simulation_tool_url = 'http://localhost:8111/testtool/simulation/mobilepaths'
-simulation_mobile_url = 'http://localhost:8111/testtool/simulation/mobilepath/'
+simulation_tool_url = 'http://' + locs_host + ':8111/testtool/simulation/mobilepaths'
+simulation_mobile_url = 'http://' + locs_host +':8111/testtool/simulation/mobilepath/'
 google_maps_url = "https://maps.google.com/maps?q="
 
-scenario_control_url = 'http://localhost:8111/testtool/scenario/control?'
-location_query_url =  'http://localhost:3128/location/v1/queries/location?requester=locationGE:fiware&requestedAccuracy=50&acceptableAccuracy=60&maximumAge=100&tolerance=DelayTolerant&address='
+scenario_control_url = 'http://' + locs_host + ':8111/testtool/scenario/control?'
+location_query_url =  'http://' + locs_host + ':3128/location/v1/queries/location?requester=locationGE:fiware&requestedAccuracy=50&acceptableAccuracy=60&maximumAge=100&tolerance=DelayTolerant&address='
 
 allPoints = dict()
 

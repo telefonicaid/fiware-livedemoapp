@@ -337,13 +337,11 @@ Parameters:
 * NGSI2COSMOS_HOST and NGSI2COSMOS_PORT where ngsi2cosmos runs
 * IDAS_HOST where IDAS runs
 
-However, the ENV.sh file only covers shell scripts (.sh files). For Python code, you need to look to the code and replace in
-the proper places:
+In addition, for Python code, you need to modify env.py files in the following places:
 
-* In packages/event2issue/event2issue.py, set cb_url and store_url to the actual URLs
-* In packages/location2cb/locs_sim.py, set the URLs at the beginning to the LOCS actual URL
-* In packages/ngsi2cosmos/ngsi2cosmos.py, set cosmos_url properly to the URL where COSMOS Https is listening
-
+* In package/event2issue/env.py, set cb_url and store_url to the actual URLs
+* In package/location2cb/env.py, set locs_host to the LOCS actual host IP/name
+* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening
 
 ## Contact
 

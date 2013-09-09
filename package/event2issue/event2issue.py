@@ -30,11 +30,11 @@ from sys import argv
 from xml_request import query_issues_xml, register_issue_xml, update_issue_xml, update_issue_severity_xml
 from constants import *
 
+from env import cb_url, store_url
+
 # Default arguments
 port = 5000
 default_timeout = 3
-cb_url = 'http://localhost:1026/'
-store_url = 'http://localhost:80'
 acc_token_file = 'accounting_token.json'
 
 # Arguments from command line

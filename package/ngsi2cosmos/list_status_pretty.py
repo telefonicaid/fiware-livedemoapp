@@ -22,7 +22,7 @@ __author__ = 'fermin'
 import subprocess
 import json
 from datetime import datetime
-from ngsi2cosmos import cosmos_url
+from env import cosmos_url
 
 url = cosmos_url + '/webhdfs/v1/user/livedemo?op=liststatus&user.name=livedemo'
 p = subprocess.Popen(['curl', '-s', url], shell=False, stdout=subprocess.PIPE)
