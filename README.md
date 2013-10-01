@@ -343,7 +343,8 @@ In addition, for Python code, you need to modify env.py files in the following p
 
 * In package/event2issue/env.py, set cb_url and store_url to the actual URLs
 * In package/location2cb/env.py, set locs_host to the LOCS actual host IP/name
-* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening
+* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user
+and base_dir to the proper directory within the HDFS directory
 
 ## Contact
 

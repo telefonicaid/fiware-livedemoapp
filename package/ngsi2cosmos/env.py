@@ -20,3 +20,5 @@
 # Environement configuration file. See README.md for details
 
 cosmos_url = 'http://localhost:14000'
+cosmos_user = 'livedemo'
+base_dir = '/user/livedemo'

@@ -28,7 +28,7 @@ from sys import argv
 from httpfs_backend import HttpFsBackend
 from webhdfs_backend import WebHdfsBackend
 import re
-from env import cosmos_url
+from env import cosmos_url, cosmos_user, base_dir
 
 # Constants
 delimiter = '|'
@@ -45,8 +45,6 @@ hdfs_backend = 'HttpFS'
 # Default arguments
 port = 1028
 default_timeout = 3
-cosmos_user = 'livedemo'
-base_dir = '/user/livedemo'
 
 # Arguments from command line
 if len(argv) > 2:
