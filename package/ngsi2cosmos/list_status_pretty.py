@@ -22,9 +22,9 @@ __author__ = 'fermin'
 import subprocess
 import json
 from datetime import datetime
-from env import cosmos_url
+from env import cosmos_url, cosmos_user, base_dir
 
-url = cosmos_url + '/webhdfs/v1/user/livedemo?op=liststatus&user.name=livedemo'
+url = cosmos_url + '/webhdfs/v1' + base_dir + '?op=liststatus&user.name=' + cosmos_user
 p = subprocess.Popen(['curl', '-s', url], shell=False, stdout=subprocess.PIPE)
 doc = json.loads(p.stdout.read())
 
