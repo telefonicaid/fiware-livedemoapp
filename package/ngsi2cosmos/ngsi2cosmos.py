@@ -142,7 +142,7 @@ def effective_type(type):
 '''
 persists
 
-Record the attribute identified by the tuple (entity_id, entity_type, attr_name, attr_name)
+Record the attribute identified by the tuple (entity_id, entity_type, attr_name, attr_type)
 in the HDFS layer
 '''
 def persists(entity_id, entity_type, attr_name, attr_type, attr_value):
@@ -152,7 +152,7 @@ def persists(entity_id, entity_type, attr_name, attr_type, attr_value):
     date_timestamp = date.strftime('%s')
     date_pretty = date.isoformat()
 
-    line = date_pretty + delimiter + date_timestamp + delimiter + attr_value
+    line = date_pretty + delimiter + date_timestamp + delimiter + entity_id + delimiter + entity_type + delimiter + attr_name + delimiter + attr_type + delimiter + attr_value
     app.logger.info('   appending to ' + file_name + ': ' + line)
     line += '\n'
     try:
