@@ -136,7 +136,8 @@ exports only one REST operations (see details in the source code):
 * POST /notify, callback that Orion Context Broker invokes whenever a new notifyContext request is sent
 
 In addition, this package includes a helper script named list_status_pretty.py that can be used to print a status
-report of the files in the HDFS backend.
+report of the files in the HDFS backend. This script list files in the default HDFS directory (based_dir) but a
+different one can be specified as script argument.
 
 ### management scripts
 
