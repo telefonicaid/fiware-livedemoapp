@@ -45,11 +45,14 @@ hdfs_backend = 'HttpFS'
 # Default arguments
 port = 1028
 default_timeout = 3
+actual_base_dir = base_dir
 
 # Arguments from command line
 if len(argv) > 2:
     port = int(argv[1])
     cosmos_url = argv[2]
+if len(argv) > 3:
+    actual_base_dir = argv[3]
 
 app = Flask(__name__)
 
@@ -80,12 +83,13 @@ Process a contextElementResponse XML element
 def process_cer(cer):
     app.logger.info("Processing contextElementResponse")
     entity = get_entity(cer)
-    type = effective_type(entity['type'])
-    app.logger.info('   entity id:   <' + entity['id'] + '>')
+    id = effective_string(entity['id'])
+    type = effective_string(entity['type'])
+    app.logger.info('   entity id:   <' + entity['id'] + '> (effective: <' + id + '>')
     app.logger.info('   entity type: <' + entity['type'] + '> (effective: <' + type + '>)')
     # Process contextAttribute list
     for ca in cer.findall('.//contextAttribute'):
-        process_ca(ca, entity['id'], type)
+        process_ca(ca, id, type)
 
 '''
 get_entity
@@ -115,7 +119,7 @@ def process_ca(ca, entity_id, entity_type):
     if (raw_type == None):
         type = ''
 
-    type = effective_type(raw_type)
+    type = effective_string(raw_type)
 
     app.logger.info('   attr name:  <' + name + '>')
     app.logger.info('   attr type:  <' + raw_type + '> (effective: <' + type + '>)')
@@ -127,16 +131,16 @@ def process_ca(ca, entity_id, entity_type):
         persists(entity_id, entity_type, name, type, value)
 
 '''
-efective_type
+efective_string
 
 Take into account weird characters (such as ':' and '-') and scape it to produce the
-final type that will go into URLs and filnames
+final string that will go into URLs and filnames
 '''
-def effective_type(type):
+def effective_string(s):
     # FIXME: currently we limit to replace weird characters with "_". As side effect, there could be ambiguities in
     # some cases (e.g. "rare-type" and "rare:type" are translated  to the same "rare_type"), a better implementation
     # would actually scape the characters
-    return re.sub(r'[-:]', '_', type)
+    return re.sub(r'[-:]', '_', s)
 
 
 '''
@@ -171,7 +175,7 @@ if __name__ == '__main__':
     # Remove all previous handerls in logger, then register handler with the format we want
     for h in app.logger.handlers:
         app.logger.removeHandler(h)
-    h = logging.FileHandler('ngsi2cosmos.log')
+    h = logging.FileHandler('ngsi2cosmos' + str(port) + '.log')
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     h.setFormatter(formatter)
     # Set the following line to either logging.INFO or logging.DEBUG
@@ -180,10 +184,10 @@ if __name__ == '__main__':
 
     if hdfs_backend == 'HttpFS':
         app.logger.info('Using HttpFS backend')
-        app.config['HDFS_BACKEND'] = HttpFsBackend(app.logger, cosmos_url, base_dir, cosmos_user)
+        app.config['HDFS_BACKEND'] = HttpFsBackend(app.logger, cosmos_url, actual_base_dir, cosmos_user)
     else:   # WebHDFS
         app.logger.info('Using WebHDFS backend')
-        app.config['HDFS_BACKEND'] = WebHdfsBackend(app.logger, cosmos_url, base_dir, cosmos_user, dn_map)
+        app.config['HDFS_BACKEND'] = WebHdfsBackend(app.logger, cosmos_url, actual_base_dir, cosmos_user, dn_map)
 
     # Run the server
     app.run(host='0.0.0.0', port=port, debug=True, threaded=True)

@@ -129,6 +129,13 @@ You can specify as arguments the listening port and the Cosmos namenode URL:
 ./ngsi2cosmos.py 1028 http://localhost:14000
 ```
 
+As third and optional argument you can specify directly the HDFS directory to use (otherwise, base_dir is used
+as default):
+
+```
+./ngsi2cosmos.py 1028 http://localhost:14000 /user/fermin
+```
+
 This process logs to ngsi2cosmos.log. It supports two HDFS backends: HttpFS and WebHDFS (the first one is preferred
 and used by default, given that it doesn't need cluster complete exposure, only needs access to the namenode). It
 exports only one REST operations (see details in the source code):
