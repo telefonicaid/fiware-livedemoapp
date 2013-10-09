@@ -218,7 +218,7 @@ which means "closing the issue" according to LiveDemo application semantics.
 * get-cep-singleton.py: pretty-prints the attributes of the CEP singleton entity. It relies on query-cep-singleton.sh
 script, which encapsulates the actual NGSI request issued to Orion Context Broker.
 
-* cep-start.sh, cep-stop.sh: use them to start/stop CEP
+* cep-start.sh, cep-stop.sh, cep-status.sh: use them to start/stop CEP or report its status
 
 * clear-cep-singleton.sh: clears the CEP singleton entity, setting all its attributes with the value passed as argument.
 ```
