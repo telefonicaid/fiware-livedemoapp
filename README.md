@@ -129,6 +129,13 @@ You can specify as arguments the listening port and the Cosmos namenode URL:
 ./ngsi2cosmos.py 1028 http://localhost:14000
 ```
 
+As third and optional argument you can specify directly the HDFS directory to use (otherwise, base_dir is used
+as default):
+
+```
+./ngsi2cosmos.py 1028 http://localhost:14000 /user/fermin
+```
+
 This process logs to ngsi2cosmos.log. It supports two HDFS backends: HttpFS and WebHDFS (the first one is preferred
 and used by default, given that it doesn't need cluster complete exposure, only needs access to the namenode). It
 exports only one REST operations (see details in the source code):
@@ -136,7 +143,8 @@ exports only one REST operations (see details in the source code):
 * POST /notify, callback that Orion Context Broker invokes whenever a new notifyContext request is sent
 
 In addition, this package includes a helper script named list_status_pretty.py that can be used to print a status
-report of the files in the HDFS backend.
+report of the files in the HDFS backend. This script list files in the default HDFS directory (based_dir) but a
+different one can be specified as script argument.
 
 ### management scripts
 
@@ -343,7 +351,8 @@ In addition, for Python code, you need to modify env.py files in the following p
 
 * In package/event2issue/env.py, set cb_url and store_url to the actual URLs
 * In package/location2cb/env.py, set locs_host to the LOCS actual host IP/name
-* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening
+* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user
+and base_dir to the proper directory within the HDFS directory
 
 ## Contact
 
