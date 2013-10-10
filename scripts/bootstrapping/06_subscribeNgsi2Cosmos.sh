@@ -42,6 +42,7 @@
         </condValueList>
         </notifyCondition>
   </notifyConditions>
-  <throttling>PT5S</throttling>
+  <!--use throttling only if you expect too verbose context producer -->
+  <!--throttling>PT5S</throttling-->
 </subscribeContextRequest>
 EOF
