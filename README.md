@@ -156,11 +156,13 @@ sensors during a testing session. Scripts in this directory require superuser pr
 In particular:
     * 00_register_idas_entities/, contains scripts for registering Nodes, AMMS and Regulaltor in Orion Context Broker
     * 01_registerCepEntity.sh, registers the CEP singleton entity (used by event2issue process)
-    * 02_subscribeEvent2Isuse.sh, subscribes the event2issue callback for notifications
+    * 02_subscribeEvent2Issue.sh, subscribes the event2issue callback for notifications
     * 03_subscribeCep.sh, subscribes CEP to changes in Nodes, AMMS and Regulator, so CEP is notified each time a
       change occurs in these entities (these changes in sequence can trigger rules which result are events published
       in the CEP singleton entity)
-    * 05_vans_init.sh, register the four van entities
+    * 04a_registerTechnicians.sh and 04b_setTechnicians.sh, register and set technicians information. The second
+      script requires four arguments: the phone numbers to use for the technicians.
+    * 05_vansInit.sh, register the four van entities
     * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
     * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications
     * 08_subscribeFederatedCB-vans.sh, subscribe a federated CB (orion2 in the file) to van notifications
