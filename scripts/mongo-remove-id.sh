@@ -17,7 +17,7 @@
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
 ID=$1
-mongo orion <<EOF
+mongo orion --quiet <<EOF
 db.registrations.remove({"contextRegistration.entities.id": "$ID"})
 db.entities.remove({"_id.id": "$ID"})
 EOF
