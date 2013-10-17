@@ -16,4 +16,4 @@
 #
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
-curl ${CEP_HOST}:${CEP_PORT}/ProtonOnWebServerAdmin/resources/instances/ProtonOnWebServer -s -S | python -m json.tool
+curl "$LOCS_HOST:8111/testtool/scenario/status" -X GET -s -S | python -m json.tool

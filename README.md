@@ -252,7 +252,9 @@ takes the following parameters: entity ID, entity type, event type and severity.
 
 * renew-cb-log.sh: rotate Orion Context Broker log. This script has not been testbed so much, so it may fail.
 
-* reset-simulation-tool.sh: wrapper of the REST operation to start/restart the simulation tool (part of LOCS).
+* simulation-tool-restart.sh: wrapper of the REST operation to start/restart the simulation tool (part of LOCS).
+
+* simulation-tool-status.sh: wrapper of the REST operation to get the status of the simulation tool.
 
 * event2issue-test/, this directory contains some scripts to test event2issue process. Not too interesting, by the way.
 
