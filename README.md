@@ -21,6 +21,16 @@ documentation. In addition, knowledge on the following FI-WARE GEis:
 
 Eventually we will provide that information (or links to that information) in this page.
 
+## LiveDemo architecture
+
+View 1 (high-level functional view)
+
+![LiveDemo app view 1](/doc/LiveDemoArch-view1.png)
+
+View 2 (deployment view including conecton to FI-LAB ContextBroker and Cosmos):
+
+![LiveDemo app view 2](/doc/LiveDemoArch-view2.png)
+
 ## Content
 
 This repository contains the following Python modules in the packages/ directory:
