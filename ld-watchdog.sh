@@ -169,6 +169,7 @@ ps axf | grep location2cb | grep -v grep
 
 echo "--check that some vans are moving after 4 seconds"
 cd $SCRIPTS_DIR
+echo -e "van1\tvan2\tvan3\tvan4"
 printVans
 sleep 4s
 printVans
