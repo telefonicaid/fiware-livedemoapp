@@ -45,8 +45,11 @@ Cosmos cluster
 The required modules to run the Python modules are specified in the requirements.txt file in the repository root.
 
 In addition, this repository includes several scripts to automate management tasks related with LiveDemo
-application. They are located in the scripts/ directory. Finally, the examples/ directory contains several
+application. They are located in the scripts/ directory. The examples/ directory contains several
 examples used to program LOCS simulations.
+
+Finally, you can find in the repository root a script named ld-watchdog.sh that can be used to check that
+the LiveDemo application environment is correctly set up.
 
 More detailed information on the different pieces follow in the next sections.
 
