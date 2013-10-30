@@ -27,11 +27,18 @@ output = p.stdout.read()
 
 doc = etree.fromstring(output)
 
+van_positions = {}
 for ce in doc.findall('.//contextElement'):
     id = ce.find('.//id').text
-    print id + ':'
     for ca in ce.findall('.//contextAttribute'):
         name = ca.find('name').text
-        value = ca.find('contextValue').text
-        print '   ', repr(name).ljust(30), ': ', str(value)
+        # Actually, vans has only one attribute: current_position
+        if name == 'current_position':
+           value = ca.find('contextValue').text
+           van_positions[id] = value
 
+keys = van_positions.keys()
+keys.sort()
+for van in keys:
+    print van + ':'
+    print '   ', repr('current_position').ljust(30), ': ', str(van_positions[van])
