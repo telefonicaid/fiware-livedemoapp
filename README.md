@@ -166,6 +166,7 @@ In particular:
     * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
     * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications
     * 08_subscribeFederatedCB-vans.sh, subscribe a federated CB (orion2 in the file) to van notifications
+    * 09_subscribeFederatedCB-issues.sh, subscribe a federated CB (orion2 in the file) to issue creation and update notifications
 
 * get-from-amms.py: pretty-prints a given attribute for all AMMS (attribute name passed as argument). It
 relies on query-amms.sh script, which encapsulates the actual NGSI request issued to Orion Context Broker.
@@ -237,7 +238,7 @@ script, which encapsulates the actual NGSI request issued to Orion Context Broke
 
 * mongo-remove-all-issues.sh: removes all issues in MongoDB
 
-* mongo-remove-expired-csub.sh: removes all expired documents in MongoDB (after running the garbage-collector.py
+* mongo-remove-expired-subs.sh: removes all expired subscriptions in MongoDB (after running the garbage-collector.py
 program tha comes with Orion Context Broker RPM).
 
 * mongo-remove-id.sh: removes a given registration/entity associated in MongoDB, identified by its ID.

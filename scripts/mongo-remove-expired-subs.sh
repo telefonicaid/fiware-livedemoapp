@@ -18,4 +18,5 @@
 
 mongo orion --quiet <<EOF
 db.csubs.remove({expired: 1})
+db.casubs.remove({expired: 1})
 EOF
