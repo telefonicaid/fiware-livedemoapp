@@ -46,6 +46,24 @@ function printVans() {
    echo -e "$VAN1\t$VAN2\t$VAN3\t$VAN4"
 }
 
+function databaseCount() {
+   REG_N=$(mongo orion --quiet --eval "db.registrations.count()")
+   ENT_N=$(mongo orion --quiet --eval "db.entities.count()")
+   CSUB_N=$(mongo orion --quiet --eval "db.csubs.count()")
+   CASUB_N=$(mongo orion --quiet --eval "db.casubs.count()")
+   ASSOC_N=$(mongo orion --quiet --eval "db.associations.count()")
+
+   echo "+ registrations collection count: $REG_N"
+   echo "+ entities collection count:      $ENT_N"
+   echo "+ csubs collection count:         $CSUB_N"
+   echo "+ casubs collection count:        $CASUB_N"
+   echo "+ associations collection count:  $ASSOC_N"
+}
+
+echo "=========="
+echo "Statistics"
+echo "=========="
+curl -s ${CB_HOST}:${CB_PORT}/statistics
 
 echo "=================="
 echo "Last day stability"
@@ -57,6 +75,9 @@ YESTERDAY_D=$(date -d "yesterday" +"%e")
 echo "============="
 echo "Reset section"
 echo "============="
+
+echo "--database count before reset:"
+databaseCount
 
 echo "--removing expired subscriptions"
 /usr/local/bin/garbage-collector.py csubs casubs > /dev/null
@@ -72,6 +93,9 @@ echo
 curl -X POST ${E2I_HOST}:${E2I_PORT}/new_issue/OUTSMART.NODE_3501/BrokenLamp/Critical
 echo
 
+echo "--database count after reset:"
+databaseCount
+
 echo "==============="
 echo "General section"
 echo "==============="
@@ -83,20 +107,8 @@ echo "======================"
 echo "Context Broker section"
 echo "======================"
 
-echo "--Version test:"
+echo "--version test:"
 curl -s ${CB_HOST}:${CB_PORT}/version
-
-REG_N=$(mongo orion --quiet --eval "db.registrations.count()")
-ENT_N=$(mongo orion --quiet --eval "db.entities.count()")
-CSUB_N=$(mongo orion --quiet --eval "db.csubs.count()")
-CASUB_N=$(mongo orion --quiet --eval "db.casubs.count()")
-ASSOC_N=$(mongo orion --quiet --eval "db.associations.count()")
-
-echo "--registrations collection count: $REG_N"
-echo "--entities collection count:      $ENT_N"
-echo "--csubs collection count:         $CSUB_N"
-echo "--casubs collection count:        $CASUB_N"
-echo "--associations collection count:  $ASSOC_N"
 
 echo "--subscriptions detail (reference is csubs with 6 documents and casubs with 1)"
 /usr/local/bin/garbage-collector.py csubs casubs
