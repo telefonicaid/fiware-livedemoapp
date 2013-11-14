@@ -46,13 +46,21 @@ hdfs_backend = 'HttpFS'
 port = 1028
 default_timeout = 3
 actual_base_dir = base_dir
+log_off = False
 
+# FIXME: this way of processing arguments doesn't scale very well, we need
+# a better approach
 # Arguments from command line
 if len(argv) > 2:
     port = int(argv[1])
     cosmos_url = argv[2]
 if len(argv) > 3:
     actual_base_dir = argv[3]
+if len(argv) > 4:
+    cosmos_user = argv[4]
+if len(argv) > 5:
+    if argv[5] == "log_off":
+        log_off = True
 
 app = Flask(__name__)
 
@@ -172,15 +180,16 @@ def persists(entity_id, entity_type, attr_name, attr_type, attr_value):
 
 if __name__ == '__main__':
 
-    # Remove all previous handerls in logger, then register handler with the format we want
-    for h in app.logger.handlers:
-        app.logger.removeHandler(h)
-    h = logging.FileHandler('ngsi2cosmos' + str(port) + '.log')
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    h.setFormatter(formatter)
-    # Set the following line to either logging.INFO or logging.DEBUG
-    h.setLevel(logging.DEBUG)
-    app.logger.addHandler(h)
+    if not log_off:
+        # Remove all previous handerls in logger, then register handler with the format we want
+        for h in app.logger.handlers:
+            app.logger.removeHandler(h)
+        h = logging.FileHandler('ngsi2cosmos' + str(port) + '.log')
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        h.setFormatter(formatter)
+        # Set the following line to either logging.INFO or logging.DEBUG
+        h.setLevel(logging.DEBUG)
+        app.logger.addHandler(h)
 
     if hdfs_backend == 'HttpFS':
         app.logger.info('Using HttpFS backend')

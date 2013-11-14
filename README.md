@@ -142,11 +142,11 @@ You can specify as arguments the listening port and the Cosmos namenode URL:
 ./ngsi2cosmos.py 1028 http://localhost:14000
 ```
 
-As third and optional argument you can specify directly the HDFS directory to use (otherwise, base_dir is used
-as default):
+As additional optaional arguments you can specify directly the HDFS directory to use (default is base_dir), 
+HDFS user (default is cosmos_user) and disable logging (using "log_off", otherwise logging is activated)
 
 ```
-./ngsi2cosmos.py 1028 http://localhost:14000 /user/fermin
+./ngsi2cosmos.py 1028 http://localhost:14000 /user/fermin fermin log_off
 ```
 
 This process logs to ngsi2cosmos.log. It supports two HDFS backends: HttpFS and WebHDFS (the first one is preferred
