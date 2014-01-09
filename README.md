@@ -179,8 +179,7 @@ In particular:
     * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
     * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications
     * 08_subscribeFederatedCB-vans.sh, subscribe a federated CB (orion2 in the file) to van notifications
-    * 09a_subscribeFederatedCB-issues-ngsi9.sh, subscribe a federated CB (orion2 in the file) to issue registration notifications
-    * 09b_subscribeFederatedCB-issues-ngsi10.sh, subscribe a federated CB (orion2 in the file) to issue update notifications
+    * 09_subscribeFederatedCB-issues.sh, subscribe a federated CB (orion2 in the file) to issue notifications
 
 * get-from-amms.py: pretty-prints a given attribute for all AMMS (attribute name passed as argument). It
 relies on query-amms.sh script, which encapsulates the actual NGSI request issued to Orion Context Broker.

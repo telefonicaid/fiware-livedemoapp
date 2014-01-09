@@ -17,6 +17,5 @@
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
 mongo orion --quiet <<EOF
-db.registrations.remove({"contextRegistration.entities.type": "Issue"})
 db.entities.remove({"_id.type": "Issue"})
 EOF

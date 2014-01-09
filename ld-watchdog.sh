@@ -110,8 +110,8 @@ echo "======================"
 echo "--version test:"
 curl -s ${CB_HOST}:${CB_PORT}/version
 
-echo "--subscriptions detail (reference is csubs with 6 documents and casubs with 1)"
-/usr/local/bin/garbage-collector.py csubs casubs
+echo "--subscriptions detail (reference is csubs with 6 documents)"
+/usr/local/bin/garbage-collector.py csubs
 
 echo "--last times:"
 cd $SCRIPTS_DIR && ./last-times.py
