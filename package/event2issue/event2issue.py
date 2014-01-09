@@ -27,7 +27,7 @@ import json
 from datetime import datetime
 from sys import argv
 
-from xml_request import query_issues_xml, register_issue_xml, update_issue_xml, update_issue_severity_xml
+from xml_request import query_issues_xml, update_issue_xml, update_issue_severity_xml
 from constants import *
 
 from env import cb_url, store_url
@@ -263,12 +263,9 @@ def create_issue(issue_id, event_attrs):
 
     try:
         app.logger.info('Creating Issue ID ' + issue_id)
-        response = do_post(cb_url + 'NGSI9/registerContext', register_issue_xml(issue_id)).content
-        app.logger.info('response OK')
-        app.logger.debug(response)
 
         update_xml = update_issue_xml(issue_id, event_attrs[EVENT_AFFECTED_ENTITY_ID], event_attrs[EVENT_EVENT_TYPE],
-                                  event_attrs[EVENT_EVENT_SEVERITY])
+                                  event_attrs[EVENT_EVENT_SEVERITY], 'APPEND')
         response = do_post(cb_url + 'NGSI10/updateContext', update_xml).content
         app.logger.info('response OK')
         app.logger.debug(response)
