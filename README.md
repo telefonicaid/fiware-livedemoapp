@@ -1,8 +1,9 @@
 # FI-WARE Live Demo Application
 
 This repository contains different pieces of code used in the FI-WARE LiveDemo application, opened to developers
-worldwide under AGPL license so they can have a look on how applications are built using the FI-WARE platform.
-In particular, this repository contains the pieces of code developed by Telefónica I+D, other pieces (developed by
+worldwide under AGPL license so they can have a look on how applications are built using the FI-WARE platform. If you haven't ever seen the FI-WARE LiveDemo application running, we suggest you to have a look to this video: http://www.youtube.com/watch?v=Wh_zPsLUg-8
+
+This repository contains the pieces of code developed by Telefónica I+D, other pieces (developed by
 other partners in the project) are available in the following locations:
 
 * historymod module. Developed by Universidad Politécnica de Madrid (UPM). https://github.com/wirecloud-fiware/historymod
