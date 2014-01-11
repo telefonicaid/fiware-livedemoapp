@@ -16,35 +16,55 @@
 #
 # For those usages not covered by the GNU Affero General Public License please contact with fermin at tid dot es
 
-(curl ${CB_HOST}:${CB_PORT}/NGSI9/registerContext -s -S --header 'Content-Type: application/xml' -d @- | xmllint --format - ) <<EOF
-<?xml version="1.0"?>
-  <registerContextRequest>
-    <contextRegistrationList>
-      <contextRegistration>
-        <entityIdList>
-          <entityId type="Van" isPattern="false">
-            <id>van1</id>
-          </entityId>
-          <entityId type="Van" isPattern="false">
-            <id>van2</id>
-          </entityId>
-          <entityId type="Van" isPattern="false">
-            <id>van3</id>
-          </entityId>
-          <entityId type="Van" isPattern="false">
-            <id>van4</id>
-          </entityId>
-        </entityIdList>
-        <contextRegistrationAttributeList>
-          <contextRegistrationAttribute>
-            <name>current_position</name>
-            <type></type>
-            <isDomain>false</isDomain>
-          </contextRegistrationAttribute>
-        </contextRegistrationAttributeList>
-        <providingApplication>http://www.fi-ware.eu/NGSI/dummy</providingApplication>
-      </contextRegistration>
-    </contextRegistrationList>
-    <duration>P5Y</duration>
-  </registerContextRequest>
+(curl ${CB_HOST}:${CB_PORT}/NGSI10/updateContext -s -S --header 'Content-Type: application/xml' -d @- | xmllint --format - ) <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<updateContextRequest>
+  <contextElementList>
+    <contextElement>
+      <entityId type="Van" isPattern="false">
+        <id>van1</id>
+      </entityId>
+      <contextAttributeList>
+        <contextAttribute>
+          <name>current_position</name>
+          <contextValue>43.475579, -3.804835</contextValue>
+        </contextAttribute>
+      </contextAttributeList>
+    </contextElement>
+    <contextElement>
+      <entityId type="Van" isPattern="false">
+        <id>van2</id>
+      </entityId>
+      <contextAttributeList>
+        <contextAttribute>
+          <name>current_position</name>
+          <contextValue>43.472823, -3.790823</contextValue>
+        </contextAttribute>
+      </contextAttributeList>
+    </contextElement>
+    <contextElement>
+      <entityId type="Van" isPattern="false">
+        <id>van3</id>
+      </entityId>
+      <contextAttributeList>
+        <contextAttribute>
+          <name>current_position</name>
+          <contextValue>43.478148, -3.804234</contextValue>
+        </contextAttribute>
+      </contextAttributeList>
+    </contextElement>
+    <contextElement>
+      <entityId type="Van" isPattern="false">
+        <id>van4</id>
+      </entityId>
+      <contextAttributeList>
+        <contextAttribute>
+          <name>current_position</name>
+          <contextValue>43.472044, -3.79505</contextValue>
+        </contextAttribute>
+      </contextAttributeList>
+    </contextElement>
+  </contextElementList>
+  <updateAction>APPEND</updateAction>
+</updateContextRequest>
 EOF

@@ -176,7 +176,7 @@ In particular:
       in the CEP singleton entity)
     * 04a_registerTechnicians.sh and 04b_setTechnicians.sh, register and set technicians information. The second
       script requires four arguments: the phone numbers to use for the technicians.
-    * 05_vansInit.sh, register the four van entities
+    * 05_vansInit.sh, create the four van entities. It can be also used to reset vans to their initial positions
     * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
     * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications
     * 08_subscribeFederatedCB-vans.sh, subscribe a federated CB (orion2 in the file) to van notifications
@@ -231,8 +231,6 @@ encapsulates the actual NGSI request issued to Orion Context Broker.
 ```
 ./set-regulator.sh electricalPotential -7
 ```
-
-* set-van-initial-positions.sh: set van initial positions.
 
 * close-issue.sh: set closingDate attribute to current time on a given Issue (which number is passed as argument),
 which means "closing the issue" according to LiveDemo application semantics.
