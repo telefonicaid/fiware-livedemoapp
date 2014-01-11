@@ -72,7 +72,7 @@ vans = {technitians[0]: 'van1',
         }
 
 # Used without arguments, this script is just a location-CB updater for
-# all the tecniians. Used with arguments, it moves a single technitian
+# all the technitians. Used with arguments, it moves a single technitian
 # (working in the same way than move_van.py script)
 autonomous = False
 route_pointer = 0
