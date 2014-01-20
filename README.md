@@ -386,6 +386,8 @@ in the repository root.
 # Cosmos Demo Applications
 Cosmos is the reference implementation of the Big Data GE, and its FI-LAB Global Instance (also called in this document Cosmos cluster, or cluster) holds several public datasets regarding certain spanish Smart Cities.
 
+Some applications exploiting those datasets have been developed for demostration purposes, and they are documented in the next sections.
+
 ## Plague Tracker
 Conceptually speaking, this is an application running on top of the Cosmos Global Instance in FI-LAB. The Plague Tracker accesses and processes the historical data about the plagues affecting the spanish city of Malaga. More details on the nature, representation formats, location, etc. of the data can be found at:
 
