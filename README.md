@@ -384,7 +384,7 @@ This code is licensed under GNU Affero General Public License v3. You can find t
 in the repository root.
 
 # Cosmos Demo Applications
-Cosmos is the reference implementation of the Big Data GE, and its Global Instance (also called in this documente Cosmos cluster, or cluster) in FI-LAB holds several public datasets regarding certaint spanish Smart Cities.
+Cosmos is the reference implementation of the Big Data GE, and its FI-LAB Global Instance (also called in this document Cosmos cluster, or cluster) holds several public datasets regarding certain spanish Smart Cities.
 
 ## Plague Tracker
 Conceptually speaking, this is an application running on top of the Cosmos Global Instance in FI-LAB. The Plague Tracker accesses and processes the historical data about the plagues affecting the spanish city of Malaga. More details on the nature, representation formats, location, etc. of the data can be found at:
@@ -392,8 +392,8 @@ Conceptually speaking, this is an application running on top of the Cosmos Globa
 http://forge.fi-ware.eu/plugins/mediawiki/wiki/fiware/index.php/M%C3%A1laga_open_datasets#Plagues_tracking
 
 Under the above concept there is a Java-based Hive client querying the Cosmos cluster through the TCP/10000 port, where a Hive server listens for incoming connections. This Hive client is governed by a Web application exposing a GUI (a map of the city of Malaga and a set of controls) the final user operates in order to get certain visualizations of the data. These visualizations/operations are:
-- Current focuses. The map shows the neighbourhoods affected by the selected type of plague.
-- Infection forecast. The map shows a forecast on the neighbourhoods that will probably fe infected by the selected type of plague.
+- Get the current focuses. The map shows the neighbourhoods affected by the selected type of plague. A neighbourhood is affected by a plague if a technician had to work in mitigating the plague in that neighbourhood the last month.
+- Get an infection forecast. The map shows a forecast about the neighbourhoods that will probably fe infected by the selected type of plague. The forecast is based on the historical number of incidences, the weather and the proximity to already infected neighbourhoods.
 
 The plague types the user can select are:
 - Rats
@@ -409,5 +409,18 @@ In addition to the map, three charts show the correlation index between the sele
 
 http://forge.fi-ware.eu/plugins/mediawiki/wiki/fiware/index.php/M%C3%A1laga_open_datasets#Weather
 
+### Requirements, dependencies and security concerns
+Being a web application, the Plague Tracker needs an applications server such as Tomcat. The current code has been tested on Tomcat 7.0.14.0.
+
+The code depends on Hive (0.7.1 or higher), Hadoop (0.20 / CDH3) and Gson (0.7.1 or higher). Nevertheless, the dependencies are automatically managed by Maven (see the pom.xml file), thus nothing should be done regarding this.
+
+If you are thinking on deploying your own instance of the application, please take into account the hosting server will need permissions for accessing the Cosmos Global Instance. This is not a constraing when the hosting server is a virtual machine from FI-WARE, created through the FI-LAB Portal (http://lab.fi-lab.eu).
+
 ### Already deployed instances of this application
 http://130.206.81.65:8080/plague-tracker/
+
+### Contact
+For any question, bug report, suggestion or feedback in general, please contact with Francisco Romero (frb at tid dot es).
+
+### License
+
