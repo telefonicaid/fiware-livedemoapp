@@ -421,8 +421,8 @@ If you are thinking on deploying your own instance of the application, please ta
 ### Already deployed instances of this application
 http://130.206.81.65:8080/plague-tracker/
 
-### Contact
+## Contact
 For any question, bug report, suggestion or feedback in general, please contact with Francisco Romero (frb at tid dot es).
 
-### License
+## License
 This code is licensed under GNU Affero General Public License v3. You can find the license text in the LICENSE file in the repository root.
