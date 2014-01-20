@@ -382,3 +382,32 @@ If I don't know the answer I will redirect you to the right contact :)
 
 This code is licensed under GNU Affero General Public License v3. You can find the license text in the LICENSE file
 in the repository root.
+
+# Cosmos Demo Applications
+Cosmos is the reference implementation of the Big Data GE, and its Global Instance (also called in this documente Cosmos cluster, or cluster) in FI-LAB holds several public datasets regarding certaint spanish Smart Cities.
+
+## Plague Tracker
+Conceptually speaking, this is an application running on top of the Cosmos Global Instance in FI-LAB. The Plague Tracker accesses and processes the historical data about the plagues affecting the spanish city of Malaga. More details on the nature, representation formats, location, etc. of the data can be found at:
+
+http://forge.fi-ware.eu/plugins/mediawiki/wiki/fiware/index.php/M%C3%A1laga_open_datasets#Plagues_tracking
+
+Under the above concept there is a Java-based Hive client querying the Cosmos cluster through the TCP/10000 port, where a Hive server listens for incoming connections. This Hive client is governed by a Web application exposing a GUI (a map of the city of Malaga and a set of controls) the final user operates in order to get certain visualizations of the data. These visualizations/operations are:
+- Current focuses. The map shows the neighbourhoods affected by the selected type of plague.
+- Infection forecast. The map shows a forecast on the neighbourhoods that will probably fe infected by the selected type of plague.
+
+The plague types the user can select are:
+- Rats
+- Mice
+- Pigeons
+- Cockroaches
+- Bees
+- Wasps
+- Ticks
+- Fleas
+
+In addition to the map, three charts show the correlation index between the selected type of plague and three ambiental parameters such as the temperature, the rainfall and the humidity. These ambiental parameters are got from another dataset related to the city of Malaga:
+
+http://forge.fi-ware.eu/plugins/mediawiki/wiki/fiware/index.php/M%C3%A1laga_open_datasets#Weather
+
+### Already deployed instances of this application
+http://130.206.81.65:8080/plague-tracker/
