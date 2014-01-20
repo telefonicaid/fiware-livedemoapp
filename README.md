@@ -425,4 +425,4 @@ http://130.206.81.65:8080/plague-tracker/
 For any question, bug report, suggestion or feedback in general, please contact with Francisco Romero (frb at tid dot es).
 
 ### License
-
+This code is licensed under GNU Affero General Public License v3. You can find the license text in the LICENSE file in the repository root.
