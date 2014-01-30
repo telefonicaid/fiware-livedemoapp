@@ -160,7 +160,7 @@ In addition, this package includes a helper script named list_status_pretty.py t
 report of the files in the HDFS backend. This script list files in the default HDFS directory (based_dir) but a
 different one can be specified as script argument.
 
-For mor information on how to connect Orion to Cosmos, check this link: https://forge.fi-ware.eu/plugins/mediawiki/wiki/fiware/index.php/How_to_persist_Orion_data_in_Cosmos#Step_3:_subscribe_ngsi2comos_to_Orion
+For mor information on how to connect Orion to Cosmos, check this link: https://forge.fi-ware.eu/plugins/mediawiki/wiki/fiware/index.php/How_to_persist_Orion_data_in_Cosmos
 
 ### management scripts
 
