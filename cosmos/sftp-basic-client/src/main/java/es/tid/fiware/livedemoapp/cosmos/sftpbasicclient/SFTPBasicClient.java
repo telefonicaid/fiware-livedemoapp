@@ -31,8 +31,8 @@ public final class SFTPBasicClient {
         int port = 2222;
         String username = "change_to_your_user";
         String password = "change_to_your_password";
-        String hdfsDirectory = "/user/frb/datasets/bopma_velez";
-        String localFile = "files/test1";
+        String hdfsDirectory = "/user/your_user/whatever_path";
+        String localFile = "whatever_local_file";
  
         // do not use SSH authentication
         java.util.Properties config = new java.util.Properties();
