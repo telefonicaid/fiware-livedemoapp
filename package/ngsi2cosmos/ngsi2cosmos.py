@@ -198,5 +198,17 @@ if __name__ == '__main__':
         app.logger.info('Using WebHDFS backend')
         app.config['HDFS_BACKEND'] = WebHdfsBackend(app.logger, cosmos_url, actual_base_dir, cosmos_user, dn_map)
 
+    # Parse the cosmos URL in order to obtain the host
+    cosmos_host = '130.206,80,46';
+    # Compose the table name
+    table_name = 'prueba_python'
+    # Create the Hive external table; the target directory must exists
+    hiveClient = HiveClient(cosmos_host, 10000);
+    hiveClient.open_connection()
+    hiveClient.create_table("create external table if not exists " + table_name + " (ts string, ts_ms int, "
+        + "entity_name string, entity_type string, attribute_name string, attribute_type_string, value string) "
+	+ "row format delimited fields terminated by '|' location '" + actual_base_dir + "'");
+    hiveClient.close_connection()
+
     # Run the server
     app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
