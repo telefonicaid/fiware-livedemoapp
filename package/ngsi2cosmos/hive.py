@@ -63,7 +63,7 @@ class HiveClient:
     '''
     Create the table if not existing yet
     '''
-    def do_create_table(self, sentence):
+    def create_table(self, sentence):
         try:
 	    self.client.execute(sentence)
 	except Thrift.TException, tx:
@@ -71,6 +71,6 @@ class HiveClient:
 
     def close_connection(self):
         try:
-	    slef.transport.close()
+	    self.transport.close()
 	except Thrift.TException, tx:
 	    print '%s' % (tx.message)
