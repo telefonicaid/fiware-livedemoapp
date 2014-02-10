@@ -201,8 +201,8 @@ if __name__ == '__main__':
 
     # Create the target HDFS directory where the data is going to be stored, if not existing yet
     try:
-        app.config['HDFS_BACKEND'].cosmos_create_dir()
-        app.logger.info('   create dir OK')
+        app.config['HDFS_BACKEND'].cosmos_create_base_dir()
+        app.logger.info('   create HDFS base dir OK')
     except Timeout:
         app.logger.info('Exception: Timeout expired')
     except ConnectionError, e:
@@ -223,6 +223,7 @@ if __name__ == '__main__':
 	"entity_name string, entity_type string, attribute_name string, attribute_type string, value string) " \
 	"row format delimited fields terminated by '|' location '" + actual_base_dir + "'")
     hiveClient.close_connection()
+    app.logger.info('   create Hive table OK')
 
     # Run the server
     app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
