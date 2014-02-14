@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: latin-1 -*-
-# Copyright 2013 Telefonica InvestigaciŒ·ŒıŒÂn y Desarrollo, S.A.U
+# Copyright 2013 Telefonica Investigacion y Desarrollo, S.A.U
 #
 # This file is part of FI-WARE LiveDemo App
 #
@@ -30,6 +30,10 @@ from thrift.protocol import TBinaryProtocol
 
 class HiveClient:
 
+    '''
+    Given a Hive server host and port, create a transport channel where the Thrift client for Hive will be
+    sending data on.
+    '''
     def __init__(self, host, port):
         try:
 	    self.transport = TSocket.TSocket(host, port)
@@ -39,12 +43,18 @@ class HiveClient:
         except Thrift.TException, tx:
             print '%s' % (tx.message)
 
+    '''
+    Open the transport channel.
+    '''
     def open_connection(self):
         try:
             self.transport.open()
 	except Thrift.TException, tx:
 	    print '%s' % (tx.message)
 
+    '''
+    Do a select query, given the SQL query in string format.
+    '''
     def do_select(self, sentence):
         try:
             self.client.execute(sentence)
@@ -61,7 +71,7 @@ class HiveClient:
             print '%s' % (tx.message)
 
     '''
-    Create the table if not existing yet
+    Do a create table query, given the SQL query in string format.
     '''
     def create_table(self, sentence):
         try:
@@ -69,6 +79,9 @@ class HiveClient:
 	except Thrift.TException, tx:
 	    print '%s' % (tx.message)
 
+    '''
+    Close the transport channel.
+    '''
     def close_connection(self):
         try:
 	    self.transport.close()
