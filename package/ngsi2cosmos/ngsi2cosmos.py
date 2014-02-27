@@ -226,4 +226,6 @@ if __name__ == '__main__':
     app.logger.info('   create Hive table OK')
 
     # Run the server
-    app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
+    # Using :: ensures that the application will work, no matter if the client uses IPv6 (natively) or
+    # IPv4 (the OS will transalte to IPv6, see http://stackoverflow.com/questions/21673068/dual-ipv4-and-ipv6-support-in-flask-applications)
+    app.run(host='::', port=port, debug=True, threaded=True)
