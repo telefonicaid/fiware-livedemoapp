@@ -60,20 +60,6 @@ function databaseCount() {
    echo "+ associations collection count:  $ASSOC_N"
 }
 
-echo "================="
-echo "Binary corruption"
-echo "================="
-diff /usr/bin/contextBroker /home/test2/contextBroker.0.10.0
-if [ "$?" != "0" ]; then
-   echo "CORRUPTED binary"
-   ls -l /usr/bin/contextBroker
-   ls -l /home/test2/contextBroker.0.10.0
-else
-   echo "not corrupted binary"
-fi
-echo "List of corrupted binaries in /tmp":
-ls -l /tmp/*corrupted*
-
 echo "=========="
 echo "Statistics"
 echo "=========="
