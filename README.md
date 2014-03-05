@@ -58,7 +58,7 @@ More detailed information on the different pieces follow in the next sections.
 
 This process listens to updates in the CEP singleton entity (sent by Orion Context Broker as NGSI10 notifyContext
 requests to the callback URL), process the information published by CEP in that entity and generates (or updates)
-the corresponding Issue back in Orion Context Broker (using NGSI9 registerContext and NGSI10 updateContext request).
+the corresponding Issue back in Orion Context Broker (using NGSI10 updateContext request).
 
 Run it with:
 
@@ -77,7 +77,7 @@ to interact with Store. It exports the following REST operations (see details in
 
 * POST /notify, callback that Orion Context Broker invokes whenever a new CEP event occurs
 * POST /set_accounting, to set the accounting token
-* POST /new_issue/<affected_entity_id>/<type>/<severity>, to create a new Issue programmatically (as alternative
+* POST /new_issue/[affected_entity_id]/[type]/[severity], to create a new Issue programmatically (as alternative
 to CEP-generated Issues through Orion Context Broker), e.g. a third-party application interacting with LiveDemo
 application backend.
 * POST /set_counter/<n>, set the issue counter, so next Issue created will have Issue<n> name
@@ -169,13 +169,14 @@ sensors during a testing session. Scripts in this directory require superuser pr
 * bootstrapping/, this directory contains a not comprehensive set of scripts used to "bootstrap" the LiveDemo.
 In particular:
     * 00_register_idas_entities/, contains scripts for registering Nodes, AMMS and Regulaltor in Orion Context Broker
-    * 01_registerCepEntity.sh, registers the CEP singleton entity (used by event2issue process)
+    * 01_createCepEntity.sh, creates the CEP singleton entity (this entity is used by the event2issue.py process). This
+      script is very similar to clear-cep-singleton.sh (using APPEND as action insted of UPDATE)
     * 02_subscribeEvent2Issue.sh, subscribes the event2issue callback for notifications
     * 03_subscribeCep.sh, subscribes CEP to changes in Nodes, AMMS and Regulator, so CEP is notified each time a
       change occurs in these entities (these changes in sequence can trigger rules which result are events published
       in the CEP singleton entity)
-    * 04a_registerTechnicians.sh and 04b_setTechnicians.sh, register and set technicians information. The second
-      script requires four arguments: the phone numbers to use for the technicians.
+    * 04_setTechnicians.sh, creates and sets technicians information. It requires four arguments: the 
+      phone numbers to use for the technicians.
     * 05_vansInit.sh, create the four van entities. It can be also used to reset vans to their initial positions
     * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
     * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications

@@ -60,6 +60,20 @@ function databaseCount() {
    echo "+ associations collection count:  $ASSOC_N"
 }
 
+echo "================="
+echo "Binary corruption"
+echo "================="
+diff /usr/bin/contextBroker /home/test2/contextBroker.0.10.0
+if [ "$?" != "0" ]; then
+   echo "CORRUPTED binary"
+   ls -l /usr/bin/contextBroker
+   ls -l /home/test2/contextBroker.0.10.0
+else
+   echo "not corrupted binary"
+fi
+echo "List of corrupted binaries in /tmp":
+ls -l /tmp/*corrupted*
+
 echo "=========="
 echo "Statistics"
 echo "=========="
@@ -110,8 +124,8 @@ echo "======================"
 echo "--version test:"
 curl -s ${CB_HOST}:${CB_PORT}/version
 
-echo "--subscriptions detail (reference is csubs with 6 documents)"
-/usr/local/bin/garbage-collector.py csubs
+echo "--subscriptions detail (reference is csubs with 6 documents and casubs with 0)"
+/usr/local/bin/garbage-collector.py csubs casubs
 
 echo "--last times:"
 cd $SCRIPTS_DIR && ./last-times.py

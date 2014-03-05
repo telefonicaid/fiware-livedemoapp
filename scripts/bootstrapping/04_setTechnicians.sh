@@ -64,7 +64,7 @@
         </contextAttributeList>
       </contextElement>
   </contextElementList>
-  <updateAction>Update</updateAction>
+  <updateAction>APPEND</updateAction>
 </updateContextRequest>
 EOF
 
@@ -116,7 +116,7 @@ EOF
         </contextAttributeList>
       </contextElement>
   </contextElementList>
-  <updateAction>Update</updateAction>
+  <updateAction>APPEND</updateAction>
 </updateContextRequest>
 EOF
 
@@ -168,7 +168,7 @@ EOF
         </contextAttributeList>
       </contextElement>
   </contextElementList>
-  <updateAction>Update</updateAction>
+  <updateAction>APPEND</updateAction>
 </updateContextRequest>
 EOF
 
@@ -220,6 +220,6 @@ EOF
         </contextAttributeList>
       </contextElement>
   </contextElementList>
-  <updateAction>Update</updateAction>
+  <updateAction>APPEND</updateAction>
 </updateContextRequest>
 EOF
