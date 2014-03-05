@@ -29,6 +29,7 @@ from httpfs_backend import HttpFsBackend
 from webhdfs_backend import WebHdfsBackend
 import re
 from env import cosmos_url, cosmos_user, base_dir
+from hive import HiveClient
 
 # Constants
 delimiter = '|'
@@ -198,5 +199,33 @@ if __name__ == '__main__':
         app.logger.info('Using WebHDFS backend')
         app.config['HDFS_BACKEND'] = WebHdfsBackend(app.logger, cosmos_url, actual_base_dir, cosmos_user, dn_map)
 
+    # Create the target HDFS directory where the data is going to be stored, if not existing yet
+    try:
+        app.config['HDFS_BACKEND'].cosmos_create_base_dir()
+        app.logger.info('   create HDFS base dir OK')
+    except Timeout:
+        app.logger.info('Exception: Timeout expired')
+    except ConnectionError, e:
+        app.logger.info('Exception: Connection error <' + str(e) + '>')
+    except Exception, e:
+        app.logger.info('Exception: <' + str(e) + '>')
+ 
+    # Parse the cosmos URL in order to obtain the host
+    cosmos_host = cosmos_url.split("//")[1].split(":")[0]
+
+    # Compose the table name
+    table_name = cosmos_user + actual_base_dir.split(cosmos_user)[1].replace("/", "_")
+
+    # Create the Hive external table
+    hiveClient = HiveClient(cosmos_host, 10000);
+    hiveClient.open_connection()
+    hiveClient.create_table("create external table if not exists " + table_name + " (ts string, ts_ms int, " \
+	"entity_name string, entity_type string, attribute_name string, attribute_type string, value string) " \
+	"row format delimited fields terminated by '|' location '" + actual_base_dir + "'")
+    hiveClient.close_connection()
+    app.logger.info('   create Hive table OK')
+
     # Run the server
-    app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
+    # Using :: ensures that the application will work, no matter if the client uses IPv6 (natively) or
+    # IPv4 (the OS will transalte to IPv6, see http://stackoverflow.com/questions/21673068/dual-ipv4-and-ipv6-support-in-flask-applications)
+    app.run(host='::', port=port, debug=True, threaded=True)

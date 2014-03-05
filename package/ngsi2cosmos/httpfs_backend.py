@@ -71,6 +71,18 @@ class HttpFsBackend(HdfsBackend):
             raise Exception('expecting 201 but getting ' + str(r.status_code))
 
     '''
+    cosmos_create_base_dir
+
+    Create a directory tree in the HDFS backend corresponding to the base directory given as argument
+    '''
+    def cosmos_create_base_dir(self):
+        # Single step operation (no interaction with the datanodes)
+        url = self.cosmos_url + '/webhdfs/v1' + self.base_dir + '?op=mkdirs&user.name=' + self.cosmos_user
+        r = do_put(self.logger, url)
+        if r.status_code != 200:
+            raise Exception('expecting 200 but getting ' + str(r.status_code))
+
+    '''
     _cosmos_file_exists
 
     Checks wether a file exists in the HDFS backend (returning true or false)
