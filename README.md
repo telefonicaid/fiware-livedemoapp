@@ -128,6 +128,8 @@ provided, then it just queries vans location from LOCS and updates the correspon
 
 ### ngsi2cosmos
 
+__Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
+
 This process listens to NGSI10 notifyContext requests sent by Orion Context Broker to the callback URL, then appends
 the values of each entity attribute to a file in the HDFS filesystem used by Cosmos (a different file is used for
 each entity-attribute pair). The attribute value is timestamped with the current time. This way, historical
