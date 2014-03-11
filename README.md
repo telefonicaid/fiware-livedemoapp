@@ -186,7 +186,7 @@ In particular:
     * 04_setTechnicians.sh, creates and sets technicians information. It requires four arguments: the 
       phone numbers to use for the technicians.
     * 05_vansInit.sh, create the four van entities. It can be also used to reset vans to their initial positions
-    * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
+    * 06_subscribeCygnus.sh, subscribe the Cygnus callback for notifications
     * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications
     * 08_subscribeFederatedCB-vans.sh, subscribe a federated CB (orion2 in the file) to van notifications
     * 09_subscribeFederatedCB-issues.sh, subscribe a federated CB (orion2 in the file) to issue notifications
@@ -372,7 +372,7 @@ Parameters:
 * CB_HOST and CB_PORT where the Orion Context Broker runs
 * FED_CB_HOST and FED_CB_PORT where the federated Orion Context Broker runs
 * E2I_HOST and E2I_PORT where the event2issue runs
-* CYGNUS_HOST and CYGNUS_PORT where ngsi2cosmos runs
+* CYGNUS_HOST and CYGNUS_PORT where Cygnus runs
 * IDAS_HOST where IDAS runs
 
 In addition, for Python code, you need to modify env.py files in the following places:
