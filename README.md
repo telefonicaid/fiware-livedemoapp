@@ -370,15 +370,14 @@ Parameters:
 * CB_HOST and CB_PORT where the Orion Context Broker runs
 * FED_CB_HOST and FED_CB_PORT where the federated Orion Context Broker runs
 * E2I_HOST and E2I_PORT where the event2issue runs
-* NGSI2COSMOS_HOST and NGSI2COSMOS_PORT where ngsi2cosmos runs
+* CYGNUS_HOST and CYGNUS_PORT where ngsi2cosmos runs
 * IDAS_HOST where IDAS runs
 
 In addition, for Python code, you need to modify env.py files in the following places:
 
 * In package/event2issue/env.py, set cb_url and store_url to the actual URLs
 * In package/location2cb/env.py, set locs_host to the LOCS actual host IP/name
-* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user
-and base_dir to the proper directory within the HDFS directory
+* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user and base_dir to the proper directory within the HDFS directory. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
 
 ## Contact
 

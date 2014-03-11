@@ -32,7 +32,7 @@
   </entityIdList>
   <attributeList>
  </attributeList>
-  <reference>http://${NGSI2COSMOS_HOST}:${NGSI2COSMOS_PORT}/notify</reference>
+  <reference>http://${CYGNUS_HOST}:${CYGNUS_PORT}/notify</reference>
   <duration>P1Y</duration>
   <notifyConditions>
         <notifyCondition>
