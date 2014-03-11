@@ -43,7 +43,9 @@ Broker
 * location2cb: tools to init the LOCS GEi, schedule van routes and regularly update that information in Orion
 Context Broker
 * ngsi2cosmos: a process that receives notification updates from Orion Context Broker and write them in the HDFS
-Cosmos cluster
+Cosmos cluster. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
+
+
 
 The required modules to run the Python modules are specified in the requirements.txt file in the repository root.
 
