@@ -43,7 +43,9 @@ Broker
 * location2cb: tools to init the LOCS GEi, schedule van routes and regularly update that information in Orion
 Context Broker
 * ngsi2cosmos: a process that receives notification updates from Orion Context Broker and write them in the HDFS
-Cosmos cluster
+Cosmos cluster. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
+
+
 
 The required modules to run the Python modules are specified in the requirements.txt file in the repository root.
 
@@ -184,7 +186,7 @@ In particular:
     * 04_setTechnicians.sh, creates and sets technicians information. It requires four arguments: the 
       phone numbers to use for the technicians.
     * 05_vansInit.sh, create the four van entities. It can be also used to reset vans to their initial positions
-    * 06_subscribeNgsi2Cosmos.sh, subscribe the ngsi2cosmos callback for notifications
+    * 06_subscribeCygnus.sh, subscribe the Cygnus callback for notifications
     * 07_subscribeFederatedCB-sensors.sh, subscribe a federated CB (orion2 in the file) to sensor notifications
     * 08_subscribeFederatedCB-vans.sh, subscribe a federated CB (orion2 in the file) to van notifications
     * 09_subscribeFederatedCB-issues.sh, subscribe a federated CB (orion2 in the file) to issue notifications
@@ -370,15 +372,14 @@ Parameters:
 * CB_HOST and CB_PORT where the Orion Context Broker runs
 * FED_CB_HOST and FED_CB_PORT where the federated Orion Context Broker runs
 * E2I_HOST and E2I_PORT where the event2issue runs
-* NGSI2COSMOS_HOST and NGSI2COSMOS_PORT where ngsi2cosmos runs
+* CYGNUS_HOST and CYGNUS_PORT where Cygnus runs
 * IDAS_HOST where IDAS runs
 
 In addition, for Python code, you need to modify env.py files in the following places:
 
 * In package/event2issue/env.py, set cb_url and store_url to the actual URLs
 * In package/location2cb/env.py, set locs_host to the LOCS actual host IP/name
-* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user
-and base_dir to the proper directory within the HDFS directory
+* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user and base_dir to the proper directory within the HDFS directory. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
 
 ## Contact
 
