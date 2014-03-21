@@ -176,7 +176,7 @@ sensors during a testing session. Scripts in this directory require superuser pr
 
 * bootstrapping/, this directory contains a not comprehensive set of scripts used to "bootstrap" the LiveDemo.
 In particular:
-    * 00_register_idas_entities/, contains scripts for registering Nodes, AMMS and Regulaltor in Orion Context Broker
+    * 00_register_idas_entities/, contains scripts for creating Nodes, AMMS and Regulator in Orion Context Broker
     * 01_createCepEntity.sh, creates the CEP singleton entity (this entity is used by the event2issue.py process). This
       script is very similar to clear-cep-singleton.sh (using APPEND as action insted of UPDATE)
     * 02_subscribeEvent2Issue.sh, subscribes the event2issue callback for notifications

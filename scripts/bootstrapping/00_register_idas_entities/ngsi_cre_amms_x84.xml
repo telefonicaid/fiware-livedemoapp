@@ -1,0 +1,37 @@
+<updateContextRequest>
+<contextElementList>
+  <contextElement>
+    <entityId type="AMMS" isPattern="false">
+      <id>OUTSMART.AMMS_06E1E5B2100394784</id>
+    </entityId>
+    <contextAttributeList>
+      <contextAttribute>
+        <name>TimeInstant</name>
+        <type>urn:x-ogc:def:trs:IDAS:1.0:ISO8601</type>
+        <contextValue>2013-04-07T23:00:00.000000Z</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>Latitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:latitude</type>
+        <contextValue>43.4575</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>Longitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:longitude</type>
+        <contextValue>-3.82554</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>ActivePower</name>
+        <type>urn:x-ogc:def:phenomenon:Outsmart:1.0:ActivePower</type>
+        <contextValue>2758</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>ReactivePower</name>
+        <type>urn:x-ogc:def:phenomenon:Outsmart:1.0:ReactivePower</type>
+        <contextValue>1390</contextValue>
+      </contextAttribute>
+    </contextAttributeList>
+  </contextElement>
+</contextElementList>
+<updateAction>APPEND</updateAction>
+</updateContextRequest>
