@@ -1,0 +1,47 @@
+<updateContextRequest>
+<contextElementList>
+  <contextElement>
+    <entityId type="Regulator" isPattern="false">
+      <id>OUTSMART.RG_LAS_LLAMAS_01</id>
+    </entityId>
+    <contextAttributeList>
+      <contextAttribute>
+        <name>TimeInstant</name>
+        <type>urn:x-ogc:def:trs:IDAS:1.0:ISO8601</type>
+        <contextValue>2013-05-21T00:30:33.000000Z</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>Latitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:latitude</type>
+        <contextValue>43.4717</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>Longitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:longitude</type>
+        <contextValue>-3.80692</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>ActivePower</name>
+        <type>urn:x-ogc:def:phenomenon:Outsmart:1.0:ActivePower</type>
+        <contextValue>10770</contextValue>
+      </contextAttribute>
+      <contextAttribute>        
+        <name>ReactivePower</name>
+        <type>urn:x-ogc:def:phenomenon:Outsmart:1.0:ReactivePower</type>
+        <contextValue>6633</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>electricCurrent</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:electricCurrent</type>
+        <contextValue>18082</contextValue>
+      </contextAttribute>
+      <contextAttribute>        
+        <name>electricPotential</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:electricPotential</type>
+        <contextValue>232</contextValue>
+      </contextAttribute> 
+    </contextAttributeList>
+  </contextElement>
+</contextElementList>
+<updateAction>APPEND</updateAction>
+</updateContextRequest>

@@ -1,0 +1,42 @@
+<updateContextRequest>
+<contextElementList>
+  <contextElement>
+    <entityId type="Node" isPattern="false">
+      <id>OUTSMART.NODE_3503</id>
+    </entityId>
+    <contextAttributeList>
+      <contextAttribute>
+        <name>TimeInstant</name>
+        <type>urn:x-ogc:def:trs:IDAS:1.0:ISO8601</type>
+        <contextValue>2013-05-08T09:33:33.000000Z</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>Latitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:latitude</type>
+        <contextValue>43.4723</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>Longitud</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:longitude</type>
+        <contextValue>-3.80432</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>presence</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:presence</type>
+        <contextValue>0</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>illuminance</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:illuminance</type>
+        <contextValue>336.11</contextValue>
+      </contextAttribute>
+      <contextAttribute>
+        <name>batteryCharge</name>
+        <type>urn:x-ogc:def:phenomenon:IDAS:1.0:batteryCharge</type>
+        <contextValue>71</contextValue>
+      </contextAttribute>
+    </contextAttributeList>
+  </contextElement>
+</contextElementList>
+<updateAction>APPEND</updateAction>
+</updateContextRequest>
