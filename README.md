@@ -43,7 +43,7 @@ Broker
 * location2cb: tools to init the LOCS GEi, schedule van routes and regularly update that information in Orion
 Context Broker
 * ngsi2cosmos: a process that receives notification updates from Orion Context Broker and write them in the HDFS
-Cosmos cluster. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
+Cosmos cluster. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/flume.__
 
 
 
@@ -130,7 +130,7 @@ provided, then it just queries vans location from LOCS and updates the correspon
 
 ### ngsi2cosmos
 
-__Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
+__Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/flume.__
 
 This process listens to NGSI10 notifyContext requests sent by Orion Context Broker to the callback URL, then appends
 the values of each entity attribute to a file in the HDFS filesystem used by Cosmos (a different file is used for
@@ -379,7 +379,7 @@ In addition, for Python code, you need to modify env.py files in the following p
 
 * In package/event2issue/env.py, set cb_url and store_url to the actual URLs
 * In package/location2cb/env.py, set locs_host to the LOCS actual host IP/name
-* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user and base_dir to the proper directory within the HDFS directory. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/cosmos/cygnus.__
+* In package/ngsi2cosmos/env.py, set cosmos_url properly to the URL where COSMOS HttpFs is listening, cosmos_user to the proper HDFS user and base_dir to the proper directory within the HDFS directory. __Warning: since March 2014 this component is deprecated. Thus, you are highly encouraged to use its sucessor: Cygnus, available at https://github.com/telefonicaid/fiware-connectors/tree/develop/flume.__
 
 ## Contact
 
