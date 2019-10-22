@@ -1,5 +1,7 @@
 # Based on the output from "pip freeze"
 requests==2.20.0
 lxml==2.3.2
+# Blinly update from Flask 0.12.3 to avoid github security alert. Not sure if the code will work as is
+# after the upgrade but probably this repository is no longer used and it is not a big issue ;)
 Flask==1.0
 hive-thrift-py==0.0.1
