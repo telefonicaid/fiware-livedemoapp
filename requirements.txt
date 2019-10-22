@@ -1,5 +1,5 @@
 # Based on the output from "pip freeze"
 requests==2.20.0
 lxml==2.3.2
-Flask==0.12.3
+Flask==1.0
 hive-thrift-py==0.0.1
