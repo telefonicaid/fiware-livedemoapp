@@ -37,6 +37,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <!-- blind upgrade from 4.8.2 done by github dependabot -->
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
