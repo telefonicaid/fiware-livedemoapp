@@ -45,6 +45,7 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
+            <!-- blindly update from 2.2.4 to 2.8.9 to avoid github security warnings -->
             <version>2.8.9</version>
         </dependency>
         
